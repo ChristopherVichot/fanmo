@@ -5,8 +5,9 @@ class FoursquareController < ApplicationController
 
   def index
     p params
-    url = "https://api.foursquare.com/v2/venues/search?client_id=TZVJDKVW5PPACBJPIQHZTPBDBRNOTE5D0ZHQMXQ4EYS42YOR&client_secret=A2LGMVVHUUJZRKRWJL5EZZIYJOS054FP1HQZDI5ZCUNULYUT&v=20130815&ll=40.7,-74&query=#{params[:search]}&near=Miami"
+    url = "https://api.foursquare.com/v2/venues/explore?ll=25.8034485,-80.2029306&radius=3200&client_id=R2H3IGBZMHHGUELI5NUI3OJBFNXNS5KDB2PV5NMEU0XGHTRT&client_secret=2WXFH2VPVT4CGDDHIRDAYQLJFQ5AJ1LDCGOJE5TO211DIFMJ&v=20160712"
     @response = HTTParty.get(url)
     @venues = @response["response"]["venues"]
+    @results = @response['response']['groups'][0]['items']
   end
 end

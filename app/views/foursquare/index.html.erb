@@ -1,3 +1,17 @@
-<% @venues.each do |venue| %>
-  <%= venue["name"] %><br>
+<% @results.each do |venue| %>
+
+
+<!-- <div>
+  <%= venue['venue']['name'] %>
+</div> -->
+
 <% end %>
+
+
+<div>
+  <%= @results.sample['venue']['name']%>
+</div>
+
+<div>
+  <%= @results.sample['venue']['name']%>
+</div>
